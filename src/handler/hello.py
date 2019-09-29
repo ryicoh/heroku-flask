@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, request
 
 bp = Blueprint('hello', __name__)
 
@@ -9,4 +9,4 @@ def index():
 
 @bp.route('/echo')
 def echo():
-    return 'Hello, World!'
+    return request.query_string
